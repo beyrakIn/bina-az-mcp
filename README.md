@@ -31,11 +31,17 @@ Listing ids are the same on both sites.
 
 ## Setup
 
+Requires [uv](https://docs.astral.sh/uv/).
+
 ```sh
+git clone https://github.com/beyrakIn/bina-az-mcp.git
+cd bina-az-mcp
 uv sync
 claude mcp add bina-az --scope user -e BINA_AL_API_KEY=bi_live_... -- \
-  uv run --directory /Users/beyrak/Desktop/proj/bina-az-mcp python server.py
+  uv run --directory "$(pwd)" python server.py
 ```
+
+Leave out `-e BINA_AL_API_KEY=...` if you don't have a bina.al Pro key. The bina.az tools still work.
 
 The key lives only in your Claude Code config (`~/.claude.json`), never in this repo.
 
